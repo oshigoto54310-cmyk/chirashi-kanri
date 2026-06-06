@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0169)file:///C:/Users/oshig/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/Claude/Projects/%E3%83%81%E3%83%A9%E3%82%B7%E9%81%8B%E7%94%A8/chirashi-app101.html -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#0F2D4A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>チラシ提出管理</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./index_files/css2" rel="stylesheet">
-<link rel="stylesheet" href="./index_files/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 <style>
 :root {
   --navy:#0F2D4A; --navy-mid:#1A4166; --navy-light:#2A5A8A;
@@ -245,7 +245,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
 <body>
 <div class="phone">
   <div class="status-bar">
-    <span class="status-time" id="clock">07:46</span>
+    <span class="status-time" id="clock"></span>
     <div class="status-icons"><i class="ti ti-wifi"></i><i class="ti ti-battery-3"></i></div>
   </div>
   <div class="app-header">
@@ -254,764 +254,16 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
         <div class="brand-icon"><i class="ti ti-building-store"></i></div>
         <span class="brand-name">チラシ提出管理</span>
       </div>
-      <div class="header-date-pill" id="header-date">5月30日(土)</div>
+      <div class="header-date-pill" id="header-date"></div>
     </div>
-    <div style="font-size:12px;color:rgba(255,255,255,0.6);text-align:center;padding:4px 0;position:relative;z-index:1;" id="header-sub-text">全6号 · 総提出率 24%</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.6);text-align:center;padding:4px 0;position:relative;z-index:1;" id="header-sub-text">スケジュールを読み込んでください</div>
   </div>
 
   <div class="scroll-content">
 
     <!-- HOME -->
     <div class="screen active" id="screen-home">
-      <div id="issue-blocks"><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/2号</div>
-        <div class="issue-period">6月2日(火)〜8日(月)</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">8</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">3</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">73%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">8/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">73%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col">
-      <div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">5/26(月)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">5/29(木)</div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-      <div class="deadline-col">
-      <div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">5/18(日)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">5/24(土)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：青森・福住・弘前・清田・福島</div>
-    </div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;仙台&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">5/23 18:01 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;屯田&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">5/26 19:00 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;青森&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">5/24 11:00 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;福住&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">5/28 14:45 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;弘前&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">5/24 11:01 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;清田&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">5/23 17:49 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;琴似&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">5/23 17:48 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_2号&#39;,&#39;中の島&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">5/23 20:23 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <span class="pill pill-kosei-done">校正完了</span>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/9号</div>
-        <div class="issue-period">6月9日(火)〜15日(月)</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">7</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">4</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">64%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">0/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col">
-      <div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/2(月)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/5(木)</div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-      <div class="deadline-col">
-      <div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">5/25(日)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">5/31(土)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：五所・琴似・花巻・中の島</div>
-    </div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;仙台&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">5/23 18:02 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;仙台&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;屯田&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">5/26 18:59 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;屯田&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;青森&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">5/28 18:35 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;青森&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;福住&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">5/28 14:54 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;福住&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;清田&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">5/24 21:31 · 手巻き</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;清田&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;琴似&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">5/26 13:13 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;琴似&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_9号&#39;,&#39;中の島&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">5/23 20:24 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_9号&#39;,&#39;中の島&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/16号</div>
-        <div class="issue-period">6月16日(火)〜22日(月)</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">1</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">10</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">9%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">0/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col">
-      <div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/9(月)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/12(木)</div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-      <div class="deadline-col">
-      <div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/1(日)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/7(土)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：仙台・屯田・福島</div>
-    </div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" onclick="openCancel(&#39;6_16号&#39;,&#39;屯田&#39;)" style="cursor:pointer;">
-      <div class="store-av av-done">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">5/26 18:59 · 折り込み</div></div>
-      <span class="pill pill-done">提出済み</span>
-      <button class="pill pill-kosei-pending" onclick="event.stopPropagation();submitKosei(&#39;6_16号&#39;,&#39;屯田&#39;)">校正提出</button>
-      <i class="ti ti-chevron-right" style="font-size:15px;color:var(--text-muted);margin-left:4px;"></i>
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/23号</div>
-        <div class="issue-period">6月23日(火)〜29日(月)</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">0</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">11</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">0%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">0/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col">
-      <div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/16(月)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/19(木)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：全店舗（花巻は4日間掲載）</div>
-    </div>
-      <div class="deadline-col">
-      <div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/8(日)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/14(土)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：五所・中の島</div>
-    </div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/27号(折込)</div>
-        <div class="issue-period">6月27日(金)〜</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">0</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">11</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">0%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">0/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col"><div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div><div class="dl-none">対象外</div></div>
-      <div class="deadline-col">
-      <div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/15(日)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/21(土)</div>
-          </div>
-        </div>
-      </div>
-      <div class="dl-stores">対象：花巻</div>
-    </div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div><div class="issue-block">
-    <div class="issue-header">
-      <div>
-        <div class="issue-title">6/30号</div>
-        <div class="issue-period">6月30日(火)〜7月6日(月)</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-        <div class="issue-stat-box">
-          <div class="issue-stat-item"><span class="issue-stat-num green">0</span><span class="issue-stat-label">済み</span></div>
-          <div class="issue-stat-div"></div>
-          <div class="issue-stat-item"><span class="issue-stat-num amber">11</span><span class="issue-stat-label">未提出</span></div>
-          <div class="issue-stat-div"></div>
-          <span class="issue-stat-rate">0%</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
-          <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
-          <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);">0/11</span>
-          <span style="font-size:10px;color:rgba(255,255,255,0.6);">0%</span>
-        </div>
-      </div>
-    </div>
-    <div class="deadline-cols">
-      <div class="deadline-col">
-      <div class="dl-col-label tegaki"><span class="label-tegaki">手巻き</span></div>
-      <div class="dl-date-row">
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">原稿提出日</div>
-            <div class="dl-date-val">6/23(月)</div>
-          </div>
-        </div>
-        <div class="dl-date-item">
-          <div class="dl-dot dot-past"></div>
-          <div>
-            <div class="dl-date-label">最終校正日</div>
-            <div class="dl-date-val">6/26(木)</div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-      <div class="deadline-col"><div class="dl-col-label oricom"><span class="label-oricom">折り込み</span></div><div class="dl-none">対象外</div></div>
-    </div>
-    <div class="issue-store-list"><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">仙</div>
-      <div style="flex:1;"><div class="store-nm">仙台</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">五</div>
-      <div style="flex:1;"><div class="store-nm">五所</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">屯</div>
-      <div style="flex:1;"><div class="store-nm">屯田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">青</div>
-      <div style="flex:1;"><div class="store-nm">青森</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">福</div>
-      <div style="flex:1;"><div class="store-nm">福住</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">弘</div>
-      <div style="flex:1;"><div class="store-nm">弘前</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">清</div>
-      <div style="flex:1;"><div class="store-nm">清田</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">琴</div>
-      <div style="flex:1;"><div class="store-nm">琴似</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">花</div>
-      <div style="flex:1;"><div class="store-nm">花巻</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">中</div>
-      <div style="flex:1;"><div class="store-nm">中の島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div><div class="issue-store-row" style="cursor:default;">
-      <div class="store-av av-pending">島</div>
-      <div style="flex:1;"><div class="store-nm">福島</div><div class="store-mt">未提出</div></div>
-      <span class="pill pill-pending">未提出</span>
-      
-      
-    </div></div>
-  </div></div>
+      <div id="issue-blocks"></div>
     </div>
 
     <!-- SUBMIT -->
@@ -1054,7 +306,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
       <div class="card">
         <div class="card-header"><div class="card-icon blue"><i class="ti ti-file-upload"></i></div><span class="card-title">PDFから自動読み込み</span></div>
         <div class="card-body">
-          <div class="pdf-drop" onclick="document.getElementById(&#39;pdf-input&#39;).click()">
+          <div class="pdf-drop" onclick="document.getElementById('pdf-input').click()">
             <i class="ti ti-file-type-pdf" style="font-size:36px;color:var(--text-muted);display:block;margin-bottom:8px;"></i>
             <div style="font-size:14px;font-weight:700;color:var(--text-mid);">PDFをタップして選択</div>
             <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">毎月の販促スケジュールPDF</div>
@@ -1063,131 +315,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
           <div id="pdf-status" style="display:none;margin-top:12px;padding:12px;background:var(--success-light);border-radius:var(--r-md);font-size:13px;color:var(--success);font-weight:700;text-align:center;"></div>
         </div>
       </div>
-      <div id="schedule-list" style="display:flex;flex-direction:column;gap:12px;">
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/2号</span><span class="sg-sub">6月2日(火)〜8日(月)</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-tegaki">手巻き</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/26(月)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/29(木)</span></div></div>
-            </div>
-            <div class="sg-stores">全店舗</div>
-          </div>
-        </div>
-        <div class="sg-row">
-          <span class="sg-badge label-oricom">折り込み</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/18(日)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/24(土)</span></div></div>
-            </div>
-            <div class="sg-stores">青森・福住・弘前・清田・福島</div>
-          </div>
-        </div>
-    </div>
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/9号</span><span class="sg-sub">6月9日(火)〜15日(月)</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-tegaki">手巻き</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/2(月)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/5(木)</span></div></div>
-            </div>
-            <div class="sg-stores">全店舗</div>
-          </div>
-        </div>
-        <div class="sg-row">
-          <span class="sg-badge label-oricom">折り込み</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/25(日)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>5/31(土)</span></div></div>
-            </div>
-            <div class="sg-stores">五所・琴似・花巻・中の島</div>
-          </div>
-        </div>
-    </div>
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/16号</span><span class="sg-sub">6月16日(火)〜22日(月)</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-tegaki">手巻き</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/9(月)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/12(木)</span></div></div>
-            </div>
-            <div class="sg-stores">全店舗</div>
-          </div>
-        </div>
-        <div class="sg-row">
-          <span class="sg-badge label-oricom">折り込み</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/1(日)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/7(土)</span></div></div>
-            </div>
-            <div class="sg-stores">仙台・屯田・福島</div>
-          </div>
-        </div>
-    </div>
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/23号</span><span class="sg-sub">6月23日(火)〜29日(月)</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-tegaki">手巻き</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/16(月)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/19(木)</span></div></div>
-            </div>
-            <div class="sg-stores">全店舗（花巻は4日間掲載）</div>
-          </div>
-        </div>
-        <div class="sg-row">
-          <span class="sg-badge label-oricom">折り込み</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/8(日)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/14(土)</span></div></div>
-            </div>
-            <div class="sg-stores">五所・中の島</div>
-          </div>
-        </div>
-    </div>
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/27号(折込)</span><span class="sg-sub">6月27日(金)〜</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-oricom">折り込み</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/15(日)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/21(土)</span></div></div>
-            </div>
-            <div class="sg-stores">花巻</div>
-          </div>
-        </div>
-    </div>
-    <div class="schedule-group">
-      <div class="sg-header"><span class="sg-title">6/30号</span><span class="sg-sub">6月30日(火)〜7月6日(月)</span></div>
-      
-        <div class="sg-row">
-          <span class="sg-badge label-tegaki">手巻き</span>
-          <div class="sg-info">
-            <div class="sg-dates">
-              <div class="sg-date-item"><div class="sg-date-label">原稿提出日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/23(月)</span></div></div>
-              <div class="sg-date-item"><div class="sg-date-label">最終校正日</div><div class="sg-date-val"><div class="dl-dot dot-past"></div><span>6/26(木)</span></div></div>
-            </div>
-            <div class="sg-stores">全店舗</div>
-          </div>
-        </div>
-    </div></div>
+      <div id="schedule-list" style="display:flex;flex-direction:column;gap:12px;"></div>
       <div class="info-note"><i class="ti ti-info-circle"></i><span class="info-note-text">PDFを読み込むとスケジュールが自動反映されます。毎月PDFが届いたら更新してください。</span></div>
     </div>
 
@@ -1199,7 +327,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
           <div class="card-icon amber"><i class="ti ti-archive"></i></div>
           <span class="card-title">過去の提出データ</span>
         </div>
-        <div id="archive-month-list" style="padding:14px 18px;display:flex;flex-direction:column;gap:10px;"><div class="empty-state"><i class="ti ti-archive"></i><p>アーカイブはまだありません</p></div></div>
+        <div id="archive-month-list" style="padding:14px 18px;display:flex;flex-direction:column;gap:10px;"></div>
       </div>
       <div class="info-note"><i class="ti ti-info-circle"></i><span class="info-note-text">新しいPDFを読み込むと前月データがここに保存されます。</span></div>
     </div>
@@ -1207,281 +335,21 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
     <!-- HISTORY -->
     <div class="screen" id="screen-history">
       <div class="section-heading">提出履歴</div>
-      <div class="card"><div id="history-list">
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/28 18:35</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">福住（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/28 14:54</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">福住（6_16号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/28 14:53</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">福住（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/28 14:45</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">屯田（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/26 19:00</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">屯田（6_16号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/26 18:59</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">屯田（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/26 18:59</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">琴似（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/26 13:13</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">清田（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/24 21:31</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">弘前（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/24 11:01</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/24 11:00</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">中の島（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 20:24</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">中の島（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 20:23</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 18:02</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 18:01</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">清田（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 17:49</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">琴似（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 17:48</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 11:29</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_16号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 08:39</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 08:36</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 08:25</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">花巻（6_23号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:55</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">福住（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:49</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:49</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:47</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_27号(折込)）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:46</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_9号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:46</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:43</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:27</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:22</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">福住（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手配り,折込</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:08</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手配り,折込</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 07:00</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手配り</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 06:56</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手配り</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 06:56</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_2号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 06:42</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（6_16号）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/23 06:42</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">屯田（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 20:59</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">琴似（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 20:54</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">青森（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 20:53</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">弘前（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 20:30</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 19:04</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:49</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み · 5月9日号</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:17</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き · 5月2日号</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:17</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:14</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:08</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 17:04</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">屯田（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">折り込み</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 16:59</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">五所（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 16:59</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 16:58</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 16:39</div>
-    </div>
-    <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
-      <div style="width:8px;height:8px;border-radius:50%;background:var(--navy-light);flex-shrink:0;"></div>
-      <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:var(--text);">仙台（）</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">手巻き</div></div>
-      <div style="font-size:11px;color:var(--text-muted);">5/22 16:38</div>
-    </div></div></div>
+      <div class="card"><div id="history-list"></div></div>
     </div>
 
   </div>
 
   <nav class="bottom-nav">
-    <button class="nav-btn active" onclick="showScreen(&#39;home&#39;,this)"><div class="nav-icon-wrap"><i class="ti ti-home-2"></i></div><span class="nav-label">ホーム</span></button>
-    <button class="nav-btn" onclick="showScreen(&#39;submit&#39;,this)"><div class="nav-icon-wrap"><i class="ti ti-upload"></i></div><span class="nav-label">提出報告</span></button>
-    <button class="nav-btn" onclick="showScreen(&#39;schedule&#39;,this)"><div class="nav-icon-wrap"><i class="ti ti-calendar-month"></i></div><span class="nav-label">スケジュール</span></button>
-    <button class="nav-btn" onclick="showScreen(&#39;archive&#39;,this)"><div class="nav-icon-wrap"><i class="ti ti-archive"></i></div><span class="nav-label">アーカイブ</span></button>
-    <button class="nav-btn" onclick="showScreen(&#39;history&#39;,this)"><div class="nav-icon-wrap"><i class="ti ti-clock"></i></div><span class="nav-label">履歴</span></button>
+    <button class="nav-btn active" onclick="showScreen('home',this)"><div class="nav-icon-wrap"><i class="ti ti-home-2"></i></div><span class="nav-label">ホーム</span></button>
+    <button class="nav-btn" onclick="showScreen('submit',this)"><div class="nav-icon-wrap"><i class="ti ti-upload"></i></div><span class="nav-label">提出報告</span></button>
+    <button class="nav-btn" onclick="showScreen('schedule',this)"><div class="nav-icon-wrap"><i class="ti ti-calendar-month"></i></div><span class="nav-label">スケジュール</span></button>
+    <button class="nav-btn" onclick="showScreen('archive',this)"><div class="nav-icon-wrap"><i class="ti ti-archive"></i></div><span class="nav-label">アーカイブ</span></button>
+    <button class="nav-btn" onclick="showScreen('history',this)"><div class="nav-icon-wrap"><i class="ti ti-clock"></i></div><span class="nav-label">履歴</span></button>
   </nav>
 </div>
 
-<div class="loading-overlay" id="loading-overlay" style="display: none;">
+<div class="loading-overlay" id="loading-overlay">
   <div class="loading-card"><div class="spinner"></div><div class="loading-text">データを読み込み中...</div></div>
 </div>
 
@@ -1502,7 +370,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
     </div>
     <div class="cal-actions">
       <button class="cal-cancel" onclick="closePdfConfirm()">キャンセル</button>
-      <button style="flex:2;padding:12px;background:var(--navy);border:none;border-radius:var(--r-md);font-size:14px;font-weight:700;font-family:&#39;Noto Sans JP&#39;,sans-serif;color:white;cursor:pointer;" onclick="confirmPdfLoad()">引き継いで読み込む</button>
+      <button style="flex:2;padding:12px;background:var(--navy);border:none;border-radius:var(--r-md);font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;color:white;cursor:pointer;" onclick="confirmPdfLoad()">引き継いで読み込む</button>
     </div>
   </div>
 </div>
@@ -1619,23 +487,48 @@ function renderHome() {
 }
 
 
-let allDoneTimer = null;
+// 自動アーカイブ処理中の号数を管理（二重実行防止）
+const archivingKeys = new Set();
+
+async function autoArchiveIfAllDone() {
+  for (const iss of [...scheduleData]) {
+    const key = issueKey(iss.issue);
+    if (archivingKeys.has(key)) continue;
+    const allDone = STORES.every(s => storeData[key+'_'+s]?.status === 'done');
+    if (!allDone) continue;
+
+    archivingKeys.add(key);
+    try {
+      // アーカイブに保存
+      const archiveKey = 'archive_' + key + '_' + Date.now();
+      await setDoc(doc(db,'archives',archiveKey), {
+        month: new Date().toLocaleDateString('ja-JP',{year:'numeric',month:'long'}),
+        schedule: JSON.stringify([iss]),
+        stores: JSON.stringify(storeData),
+        archivedAt: new Date().toISOString()
+      });
+      // scheduleDataから該当号を削除してFirebaseに保存
+      scheduleData = scheduleData.filter(i => issueKey(i.issue) !== key);
+      await setDoc(doc(db,'settings','schedule'), {
+        data: JSON.stringify(scheduleData),
+        updatedAt: serverTimestamp()
+      });
+    } catch(e) {
+      console.error(e);
+      archivingKeys.delete(key);
+    }
+  }
+}
+
 function showAllDoneBanner(issueName) {
   // 既存バナーがあれば何もしない
   if (document.getElementById('all-done-'+issueKey(issueName))) return;
   const banner = document.createElement('div');
   banner.id = 'all-done-'+issueKey(issueName);
   banner.className = 'all-done-banner';
-  banner.innerHTML = `<div class="all-done-icon"><i class="ti ti-circle-check"></i></div><div><div class="all-done-title">${issueName} 全店舗提出済み！</div><div class="all-done-sub">全店舗の提出が完了しました。5秒後に自動で閉じます。</div></div>`;
+  banner.innerHTML = `<div class="all-done-icon"><i class="ti ti-circle-check"></i></div><div><div class="all-done-title">${issueName} 全店舗提出済み！</div><div class="all-done-sub">アーカイブに移動します...</div></div>`;
   const el = document.getElementById('issue-blocks');
   el.insertBefore(banner, el.firstChild);
-  setTimeout(() => {
-    if (banner.parentNode) {
-      banner.style.transition = 'opacity 0.5s';
-      banner.style.opacity = '0';
-      setTimeout(() => { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 500);
-    }
-  }, 5000);
 }
 
 function renderIssueBlock(iss) {
@@ -2127,6 +1020,8 @@ window.showScreen = (name, btn) => {
 // ── FIREBASE LISTENERS ──
 onSnapshot(collection(db,'stores'), snap => {
   snap.forEach(d => { storeData[d.id] = d.data(); });
+  // 全店提出済みの号を自動アーカイブ
+  if (scheduleData.length) autoArchiveIfAllDone();
   renderHome();
   // ヘッダーサブテキスト更新
   const sub = document.getElementById('header-sub-text');
@@ -2166,6 +1061,5 @@ onSnapshot(collection(db,'archives'), snap => {
   renderArchive();
 });
 </script>
-
-
-</body></html>
+</body>
+</html>

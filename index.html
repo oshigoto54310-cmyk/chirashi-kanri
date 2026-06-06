@@ -1046,6 +1046,8 @@ onSnapshot(doc(db,'settings','schedule'), snap => {
   } else {
     scheduleData = getJuneSchedule();
   }
+  // スケジュール読み込み後にもアーカイブチェック（ページ読み込み時・既存の全完了号に対応）
+  if (scheduleData.length && Object.keys(storeData).length) autoArchiveIfAllDone();
   renderHome();
   renderSchedule();
   updateStats();

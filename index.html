@@ -105,7 +105,7 @@ body { font-family:'Noto Sans JP',sans-serif; display:flex; justify-content:cent
 .dot-warn { background:var(--accent); }
 .dot-urgent { background:var(--danger); }
 .dot-past { background:#CBD5E1; }
-.dl-stores { font-size:10px; color:var(--text-muted); margin-top:5px; line-height:1.4; }
+.dl-stores { margin-top:7px; } .dl-stores-badge { display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:var(--accent-light); color:var(--accent-dark); border-radius:20px; font-size:11px; font-weight:700; border:1.5px solid var(--accent); }
 .dl-none { font-size:12px; color:var(--text-muted); padding:4px 0; }
 
 /* STORE LIST IN ISSUE */
@@ -556,7 +556,7 @@ function renderIssueBlock(iss) {
           </div>
         </div>
       </div>
-      ${item.stores !== '全店舗' ? `<div class="dl-stores">対象：${item.stores}</div>` : ''}
+      ${(item.stores !== '全店舗' && !item.stores.includes('全店')) ? `<div class="dl-stores"><span class="dl-stores-badge"><i class="ti ti-map-pin" style="font-size:12px;"></i>${item.stores}のみ対象</span></div>` : ''}
     </div>`;
   };
 
@@ -746,27 +746,28 @@ function executePdfLoad(file) {
 
 function getJuneSchedule() {
   return [
-    { issue:'6/2号', period:'6月2日(月)〜8日(日)', items:[
-      { type:'手巻き', submitDate:'2025-05-26', finalDate:'2025-05-29', stores:'全店舗' },
-      { type:'折り込み', submitDate:'2025-05-18', finalDate:'2025-05-24', stores:'青森・福住・弘前・清田・福島' },
+    { issue:'6/2号', period:'6月2日(火)〜8日(月)', items:[
+      { type:'手巻き', submitDate:'2026-05-26', finalDate:'2026-05-29', stores:'全店舗' },
+      { type:'折り込み', submitDate:'2026-05-18', finalDate:'2026-05-24', stores:'青森・福住・弘前・清田・福島' },
     ]},
-    { issue:'6/9号', period:'6月9日(月)〜15日(日)', items:[
-      { type:'手巻き', submitDate:'2025-06-02', finalDate:'2025-06-05', stores:'全店舗' },
-      { type:'折り込み', submitDate:'2025-05-25', finalDate:'2025-05-31', stores:'五所・琴似・花巻・中の島' },
+    { issue:'6/9号', period:'6月9日(火)〜15日(月)', items:[
+      { type:'手巻き', submitDate:'2026-06-02', finalDate:'2026-06-05', stores:'全店舗' },
+      { type:'折り込み', submitDate:'2026-05-25', finalDate:'2026-05-31', stores:'五所・琴似・花巻・中の島' },
     ]},
-    { issue:'6/16号', period:'6月16日(月)〜22日(日)', items:[
-      { type:'手巻き', submitDate:'2025-06-09', finalDate:'2025-06-12', stores:'全店舗' },
-      { type:'折り込み', submitDate:'2025-06-01', finalDate:'2025-06-07', stores:'仙台・屯田・福島' },
+    { issue:'6/16号', period:'6月16日(火)〜22日(月)', items:[
+      { type:'手巻き', submitDate:'2026-06-09', finalDate:'2026-06-12', stores:'全店舗' },
+      { type:'折り込み', submitDate:'2026-06-01', finalDate:'2026-06-07', stores:'仙台・屯田・福島' },
     ]},
-    { issue:'6/23号', period:'6月23日(月)〜29日(日)', items:[
-      { type:'手巻き', submitDate:'2025-06-16', finalDate:'2025-06-19', stores:'全店舗（花巻は4日間掲載）' },
-      { type:'折り込み', submitDate:'2025-06-08', finalDate:'2025-06-14', stores:'五所・中の島' },
+    { issue:'6/23号', period:'6月23日(火)〜29日(月)', items:[
+      { type:'手巻き', submitDate:'2026-06-16', finalDate:'2026-06-19', stores:'全店舗（花巻は4日間掲載）' },
+      { type:'折り込み', submitDate:'2026-06-08', finalDate:'2026-06-14', stores:'五所・中の島・福島' },
     ]},
-    { issue:'6/27号(折込)', period:'6月27日(金)〜', items:[
-      { type:'折り込み', submitDate:'2025-06-15', finalDate:'2025-06-21', stores:'花巻' },
+    { issue:'6/27号(花巻)', period:'6月27日(土)〜29日(月) 3日間', items:[
+      { type:'折り込み', submitDate:'2026-06-15', finalDate:'2026-06-21', stores:'花巻' },
     ]},
-    { issue:'6/30号', period:'6月30日(月)〜7月6日(日)', items:[
-      { type:'手巻き', submitDate:'2025-06-23', finalDate:'2025-06-26', stores:'全店舗' },
+    { issue:'6/30号', period:'6月30日(火)〜7月6日(月)', items:[
+      { type:'手巻き', submitDate:'2026-06-23', finalDate:'2026-06-26', stores:'全店舗' },
+      { type:'折り込み', submitDate:'2026-06-15', finalDate:'2026-06-21', stores:'青森' },
     ]},
   ];
 }

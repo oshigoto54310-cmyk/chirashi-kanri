@@ -494,7 +494,15 @@ async function autoArchiveIfAllDone() {
   for (const iss of [...scheduleData]) {
     const key = issueKey(iss.issue);
     if (archivingKeys.has(key)) continue;
-    const allDone = STORES.every(s => storeData[key+'_'+s]?.status === 'done');
+    const tg = iss.items.find(i=>i.type==='手巻き');
+    const og = iss.items.find(i=>i.type==='折り込み');
+    const tgtS = STORES.filter(s => {
+      const ot = og && (og.stores==='全店舗'||og.stores.includes('全店')||og.stores.split('・').some(st=>st.trim()===s));
+      const tt = tg && (tg.stores==='全店舗'||tg.stores.includes('全店')||tg.stores.split('・').map(st=>st.replace(/（.*?）/g,'')).some(st=>st.trim()===s));
+      return ot || tt;
+    });
+    if (!tgtS.length) continue;
+    const allDone = tgtS.every(s => storeData[key+'_'+s]?.status === 'done');
     if (!allDone) continue;
 
     archivingKeys.add(key);
@@ -560,7 +568,14 @@ function renderIssueBlock(iss) {
     </div>`;
   };
 
-  const storeRows = STORES.map(s => {
+  // この号の対象店舗のみに絞り込む
+  const targetStores = STORES.filter(s => {
+    const isOricomTarget = oricom && (oricom.stores==='全店舗'||oricom.stores.includes('全店')||oricom.stores.split('・').some(st=>st.trim()===s));
+    const isTegakiTarget = tegaki && (tegaki.stores==='全店舗'||tegaki.stores.includes('全店')||tegaki.stores.split('・').map(st=>st.replace(/（.*?）/g,'')).some(st=>st.trim()===s));
+    return isOricomTarget || isTegakiTarget;
+  });
+
+  const storeRows = targetStores.map(s => {
     const dataKey = key + '_' + s;
     const d = storeData[dataKey];
     const isDone = d?.status === 'done';
@@ -584,11 +599,11 @@ function renderIssueBlock(iss) {
   }).join('');
 
   const key2 = issueKey(iss.issue);
-  const doneCnt = STORES.filter(s => storeData[key2+'_'+s]?.status === 'done').length;
-  const pendingCnt = STORES.length - doneCnt;
-  const rateCnt = Math.round(doneCnt/STORES.length*100);
-  const koseiDoneCnt = STORES.filter(s => storeData[key2+'_'+s]?.koseiStatus === 'done').length;
-  const koseiRate = Math.round(koseiDoneCnt/STORES.length*100);
+  const doneCnt = targetStores.filter(s => storeData[key2+'_'+s]?.status === 'done').length;
+  const pendingCnt = targetStores.length - doneCnt;
+  const rateCnt = targetStores.length ? Math.round(doneCnt/targetStores.length*100) : 0;
+  const koseiDoneCnt = targetStores.filter(s => storeData[key2+'_'+s]?.koseiStatus === 'done').length;
+  const koseiRate = targetStores.length ? Math.round(koseiDoneCnt/targetStores.length*100) : 0;
   return `<div class="issue-block">
     <div class="issue-header">
       <div>
@@ -606,7 +621,7 @@ function renderIssueBlock(iss) {
         <div style="display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.08);border-radius:20px;padding:4px 10px;">
           <i class="ti ti-pencil-check" style="font-size:12px;color:rgba(255,255,255,0.7);"></i>
           <span style="font-size:10px;color:rgba(255,255,255,0.7);">校正</span>
-          <span style="font-size:12px;font-weight:700;color:${koseiRate===100?'#6EE7B7':'rgba(255,255,255,0.9)'};">${koseiDoneCnt}/${STORES.length}</span>
+          <span style="font-size:12px;font-weight:700;color:${koseiRate===100?'#6EE7B7':'rgba(255,255,255,0.9)'};">${koseiDoneCnt}/${targetStores.length}</span>
           <span style="font-size:10px;color:rgba(255,255,255,0.6);">${koseiRate}%</span>
         </div>
       </div>
@@ -685,15 +700,26 @@ window.confirmPdfLoad = async () => {
 async function archiveCurrentData(newSchedule) {
   if (!scheduleData.length) return;
   try {
-    // 完了済みの号数のみアーカイブ対象
+    // 完了済みの号数のみアーカイブ対象（対象店舗ベースで判定）
+    const getTargetStores = (iss) => {
+      const tg = iss.items.find(i=>i.type==='手巻き');
+      const og = iss.items.find(i=>i.type==='折り込み');
+      return STORES.filter(s => {
+        const ot = og && (og.stores==='全店舗'||og.stores.includes('全店')||og.stores.split('・').some(st=>st.trim()===s));
+        const tt = tg && (tg.stores==='全店舗'||tg.stores.includes('全店')||tg.stores.split('・').map(st=>st.replace(/（.*?）/g,'')).some(st=>st.trim()===s));
+        return ot || tt;
+      });
+    };
     const completedIssues = scheduleData.filter(iss => {
       const key = issueKey(iss.issue);
-      return STORES.every(s => storeData[key+'_'+s]?.status === 'done');
+      const tgtS = getTargetStores(iss);
+      return tgtS.length && tgtS.every(s => storeData[key+'_'+s]?.status === 'done');
     });
     // 未完了の号数は引き継ぎ対象
     const remainingIssues = scheduleData.filter(iss => {
       const key = issueKey(iss.issue);
-      return !STORES.every(s => storeData[key+'_'+s]?.status === 'done');
+      const tgtS = getTargetStores(iss);
+      return !tgtS.length || !tgtS.every(s => storeData[key+'_'+s]?.status === 'done');
     });
 
     // 完了済みのみアーカイブに保存

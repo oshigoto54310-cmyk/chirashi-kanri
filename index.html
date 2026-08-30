@@ -394,6 +394,7 @@ select.form-control { appearance:auto; -webkit-appearance:auto; cursor:pointer; 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, doc, setDoc, onSnapshot, addDoc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB4VDpZS78g57VewMDG4_F8t_umSVJEoKs",
@@ -405,9 +406,20 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
+let currentUid = null;   // 認証完了までは null（Firestoreへは触らない）
 
 const STORES = ['仙台','五所','屯田','青森','福住','弘前','清田','琴似','花巻','中の島','福島'];
 const INITIALS = {'仙台':'仙','五所':'五','屯田':'屯','青森':'青','福住':'福','弘前':'弘','清田':'清','琴似':'琴','花巻':'花','中の島':'中','福島':'島'};
+
+// 認証前の書き込みを防ぐガード（要件5）
+function requireAuth() {
+  if (!currentUid) {
+    alert('接続の準備中です。数秒おいてからもう一度お試しください。');
+    return false;
+  }
+  return true;
+}
 
 let storeData = {};    // {issueKey_store: {status,type,updatedAt}}
 let scheduleData = []; // 号数スケジュール
@@ -491,6 +503,7 @@ function renderHome() {
 const archivingKeys = new Set();
 
 async function autoArchiveIfAllDone() {
+  if (!currentUid) return;   // 認証前は書き込まない
   for (const iss of [...scheduleData]) {
     const key = issueKey(iss.issue);
     if (archivingKeys.has(key)) continue;
@@ -699,6 +712,7 @@ window.confirmPdfLoad = async () => {
 
 async function archiveCurrentData(newSchedule) {
   if (!scheduleData.length) return;
+  if (!requireAuth()) return;
   try {
     // 完了済みの号数のみアーカイブ対象（対象店舗ベースで判定）
     const getTargetStores = (iss) => {
@@ -887,6 +901,7 @@ window.submitReport = async () => {
   const type = document.getElementById('sel-type').value;
   if (!issue||!store) { alert('号数・店舗名を選択してください'); return; }
   if (!type) { alert('店舗・号数を選ぶとチラシ種別が自動で表示されます'); return; }
+  if (!requireAuth()) return;
   const ts = serverTimestamp();
   const key = issue + '_' + store;
   await setDoc(doc(db,'stores',key), { status:'done', type, store, issue, updatedAt:ts });
@@ -1016,6 +1031,7 @@ window.submitKosei = async (key, store) => {
   const dataKey = key + '_' + store;
   const d = storeData[dataKey];
   if (!d || d.status !== 'done') return;
+  if (!requireAuth()) return;
   try {
     await setDoc(doc(db,'stores',dataKey), { ...d, koseiStatus:'done', koseiAt:serverTimestamp() }, { merge:true });
   } catch(e) { console.error(e); }
@@ -1033,6 +1049,7 @@ window.openCancel = (key, store) => {
 window.closeCancel = () => { document.getElementById('cancel-modal').classList.remove('show'); cancelKey=null; cancelStore=null; };
 window.confirmCancel = async () => {
   if (!cancelKey||!cancelStore) return;
+  if (!requireAuth()) return;
   await setDoc(doc(db,'stores',cancelKey+'_'+cancelStore), { status:'pending', type:'', note:'', koseiStatus:'', store:cancelStore, issue:cancelKey, updatedAt:serverTimestamp() });
   closeCancel();
   showScreen('submit', document.querySelectorAll('.nav-btn')[1]);
@@ -1114,6 +1131,12 @@ window.showScreen = (name, btn) => {
 };
 
 // ── FIREBASE LISTENERS ──
+// 匿名認証の完了後にのみ呼ばれる（要件2・5）
+let listenersStarted = false;
+function startFirestoreListeners() {
+  if (listenersStarted) return;
+  listenersStarted = true;
+
 onSnapshot(collection(db,'stores'), snap => {
   snap.forEach(d => { storeData[d.id] = d.data(); });
   // 全店提出済みの号を自動アーカイブ
@@ -1158,6 +1181,69 @@ onSnapshot(collection(db,'archives'), snap => {
   snap.forEach(d => { archiveData[d.id] = d.data(); });
   renderArchive();
 });
+
+} // ← startFirestoreListeners ここまで
+
+// ── 匿名認証（要件1〜4）──
+// Firebase Console > Authentication > Sign-in method > 匿名 の有効化が必須。
+const loadingText = () => document.querySelector('#loading-overlay .loading-text');
+
+function showAuthError(message, canRetry) {
+  const card = document.querySelector('#loading-overlay .loading-card');
+  if (!card) return;
+  card.innerHTML =
+    '<div style="width:44px;height:44px;border-radius:50%;background:var(--danger-light);'
+    + 'display:flex;align-items:center;justify-content:center;">'
+    + '<i class="ti ti-wifi-off" style="font-size:24px;color:var(--danger);"></i></div>'
+    + '<div class="loading-text" style="line-height:1.6;">' + message + '</div>'
+    + (canRetry
+        ? '<button id="auth-retry-btn" style="margin-top:4px;padding:10px 24px;border:none;'
+          + 'border-radius:10px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;'
+          + "font-family:'Noto Sans JP',sans-serif;cursor:pointer;\">再試行</button>"
+        : '');
+  const btn = document.getElementById('auth-retry-btn');
+  if (btn) btn.onclick = () => {
+    card.innerHTML = '<div class="spinner"></div><div class="loading-text">接続中...</div>';
+    attempt = 0;
+    bootstrapAuth();
+  };
+}
+
+const MAX_ATTEMPTS = 3;
+let attempt = 0;
+
+async function bootstrapAuth() {
+  attempt++;
+  try {
+    await signInAnonymously(auth);
+    // 成功時は onAuthStateChanged 側でリスナーを開始する
+  } catch (e) {
+    console.error('[auth]', e.code || e.message);
+    if (e.code === 'auth/operation-not-allowed') {
+      // Console で匿名認証が未有効
+      showAuthError('アプリの設定が完了していません。<br>管理者にご連絡ください。', false);
+      return;
+    }
+    if (attempt < MAX_ATTEMPTS) {
+      const wait = attempt * 1500;   // 1.5秒 → 3秒
+      const t = loadingText();
+      if (t) t.textContent = '接続を再試行しています... (' + attempt + '/' + MAX_ATTEMPTS + ')';
+      setTimeout(bootstrapAuth, wait);
+      return;
+    }
+    showAuthError('通信環境をご確認ください。<br>接続できませんでした。', true);
+  }
+}
+
+// 既にサインイン済みならトークンがキャッシュされているため即座に発火する
+onAuthStateChanged(auth, user => {
+  if (user) {
+    currentUid = user.uid;
+    startFirestoreListeners();
+  }
+});
+
+bootstrapAuth();
 </script>
 </body>
 </html>

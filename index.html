@@ -118,6 +118,11 @@ body { font-family:'Noto Sans JP',sans-serif; display:flex; justify-content:cent
 .av-pending { background:var(--bg); color:var(--text-muted); }
 .store-nm { font-size:14px; font-weight:700; color:var(--text); }
 .store-mt { font-size:11px; color:var(--text-muted); margin-top:1px; }
+/* 媒体グループ見出し */
+.store-group-label { display:flex; align-items:center; gap:8px; padding:9px 18px 7px; background:var(--surface2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.store-group-label span:first-child { padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; }
+.store-group-cnt { font-size:11px; font-weight:500; color:var(--text-muted); margin-left:auto; }
+
 .pill { font-size:11px; font-weight:700; padding:4px 10px; border-radius:20px; flex-shrink:0; }
 .pill-done { background:var(--success-light); color:var(--success); }
 .pill-pending { background:var(--warning-light); color:var(--warning); margin-left:auto; }
@@ -581,14 +586,18 @@ function renderIssueBlock(iss) {
     </div>`;
   };
 
-  // この号の対象店舗のみに絞り込む
-  const targetStores = STORES.filter(s => {
-    const isOricomTarget = oricom && (oricom.stores==='全店舗'||oricom.stores.includes('全店')||oricom.stores.split('・').some(st=>st.trim()===s));
-    const isTegakiTarget = tegaki && (tegaki.stores==='全店舗'||tegaki.stores.includes('全店')||tegaki.stores.split('・').map(st=>st.replace(/（.*?）/g,'')).some(st=>st.trim()===s));
-    return isOricomTarget || isTegakiTarget;
-  });
+  // この号の対象店舗のみに絞り込み、媒体ごとに分ける
+  const isTargetOf = (item, s) => !!item && (
+    item.stores === '全店舗'
+    || item.stores.includes('全店')
+    || item.stores.split('・').map(x => x.replace(/（.*?）/g,'').trim()).some(x => x === s)
+  );
+  // 折込が優先（提出報告フォームの判定と揃える）
+  const oricomStores = STORES.filter(s => isTargetOf(oricom, s));
+  const tegakiStores = STORES.filter(s => !isTargetOf(oricom, s) && isTargetOf(tegaki, s));
+  const targetStores = [...tegakiStores, ...oricomStores];
 
-  const storeRows = targetStores.map(s => {
+  const storeRow = s => {
     const dataKey = key + '_' + s;
     const d = storeData[dataKey];
     const isDone = d?.status === 'done';
@@ -609,7 +618,20 @@ function renderIssueBlock(iss) {
       ${koseiBtn}
       ${chevron}
     </div>`;
-  }).join('');
+  };
+
+  // 媒体ごとのグループ（手巻き → 折込 の順）
+  const storeGroup = (label, badgeCls, list) => {
+    if (!list.length) return '';
+    const done = list.filter(s => storeData[key+'_'+s]?.status === 'done').length;
+    return `<div class="store-group-label">
+      <span class="${badgeCls}">${label}</span>
+      <span class="store-group-cnt">${done}/${list.length} 提出済み</span>
+    </div>${list.map(storeRow).join('')}`;
+  };
+  const storeRows =
+    storeGroup('手巻き','label-tegaki',tegakiStores)
+    + storeGroup('折り込み','label-oricom',oricomStores);
 
   const key2 = issueKey(iss.issue);
   const doneCnt = targetStores.filter(s => storeData[key2+'_'+s]?.status === 'done').length;
@@ -877,6 +899,26 @@ function getJuneSchedule() {
     ]},
     { issue:'9/29号', period:'9月29日(火)〜10月5日(月) ※対象店舗は追って更新', items:[
       { type:'手巻き', submitDate:'2026-09-22', finalDate:'2026-09-25', stores:'全店舗' },
+    ]},
+    // ── 10月（0911更新）──
+    { issue:'10/6号', period:'10月6日(火)〜12日(月)', items:[
+      { type:'手巻き', submitDate:'2026-09-29', finalDate:'2026-10-02', stores:'仙台・福住・琴似' },
+      { type:'折り込み', submitDate:'2026-09-21', finalDate:'2026-09-27', stores:'五所・青森・屯田・弘前・清田・花巻・中の島・福島' },
+    ]},
+    { issue:'10/8号(福住ポスティング)', period:'10月8日(木) のみ 1日間', items:[
+      { type:'折り込み', submitDate:'2026-09-17', finalDate:'2026-09-17', stores:'福住' },
+    ]},
+    { issue:'10/13号', period:'10月13日(火)〜19日(月) ※休刊日のため折込日は10/12', items:[
+      { type:'手巻き', submitDate:'2026-10-06', finalDate:'2026-10-09', stores:'屯田・青森・五所・弘前・清田・福住・仙台・花巻・中の島・福島' },
+      { type:'折り込み', submitDate:'2026-09-28', finalDate:'2026-10-04', stores:'琴似' },
+    ]},
+    { issue:'10/20号', period:'10月20日(火)〜26日(月)', items:[
+      { type:'手巻き', submitDate:'2026-10-13', finalDate:'2026-10-16', stores:'青森・弘前・福住・琴似・清田・福島' },
+      { type:'折り込み', submitDate:'2026-10-05', finalDate:'2026-10-11', stores:'仙台・五所・屯田・花巻・中の島' },
+    ]},
+    { issue:'10/27号', period:'10月27日(火)〜11月2日(月)', items:[
+      { type:'手巻き', submitDate:'2026-10-20', finalDate:'2026-10-23', stores:'屯田・弘前・清田・花巻・福住・仙台・五所・青森' },
+      { type:'折り込み', submitDate:'2026-10-12', finalDate:'2026-10-18', stores:'琴似・福島' },
     ]},
   ];
 }

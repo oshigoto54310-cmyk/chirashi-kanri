@@ -808,29 +808,6 @@ function executePdfLoad(file) {
 
 function getJuneSchedule() {
   return [
-    // ── 9月（0812更新）五所川原はエリア合流済み ──
-    { issue:'9/1号', period:'9月1日(火)〜7日(月)', items:[
-      { type:'手巻き', submitDate:'2026-08-25', finalDate:'2026-08-28', stores:'五所・弘前・清田・琴似・花巻・中の島・福住・仙台' },
-      { type:'折り込み', submitDate:'2026-08-18', finalDate:'2026-08-23', stores:'屯田・青森・福島' },
-    ]},
-    { issue:'9/8号', period:'9月8日(火)〜14日(月)', items:[
-      { type:'手巻き', submitDate:'2026-09-01', finalDate:'2026-09-04', stores:'屯田・青森・五所・弘前・琴似・清田・福住・福島・仙台' },
-      { type:'折り込み', submitDate:'2026-08-24', finalDate:'2026-08-30', stores:'花巻・中の島' },
-    ]},
-    { issue:'9/8号(福住ポスティング)', period:'9月8日(火) のみ 1日間', items:[
-      { type:'折り込み', submitDate:'2026-08-14', finalDate:'2026-08-20', stores:'福住' },
-    ]},
-    { issue:'9/15号', period:'9月15日(火)〜21日(月)', items:[
-      { type:'手巻き', submitDate:'2026-09-08', finalDate:'2026-09-11', stores:'青森・五所・中の島・福住・福島・花巻・仙台' },
-      { type:'折り込み', submitDate:'2026-08-31', finalDate:'2026-09-06', stores:'屯田・弘前・清田・琴似' },
-    ]},
-    { issue:'9/22号', period:'9月22日(火)〜28日(月)', items:[
-      { type:'手巻き', submitDate:'2026-09-15', finalDate:'2026-09-18', stores:'屯田・青森・弘前・琴似・清田・花巻・福住・福島' },
-      { type:'折り込み', submitDate:'2026-09-01', finalDate:'2026-09-09', stores:'仙台・五所・中の島' },
-    ]},
-    { issue:'9/29号', period:'9月29日(火)〜10月5日(月) ※対象店舗は追って更新', items:[
-      { type:'手巻き', submitDate:'2026-09-22', finalDate:'2026-09-25', stores:'全店舗' },
-    ]},
     // ── 10月（0911更新）──
     { issue:'10/6号', period:'10月6日(火)〜12日(月)', items:[
       { type:'手巻き', submitDate:'2026-09-29', finalDate:'2026-10-02', stores:'仙台・福住・琴似' },
@@ -868,6 +845,41 @@ function getJuneSchedule() {
     ]},
     { issue:'11/24号', period:'11月24日(火)〜30日(月)', items:[
       { type:'手巻き', submitDate:'2026-11-17', finalDate:'2026-11-20', stores:'全店舗' },
+    ]},
+    // ── 12月〜年始（1030更新）──
+    { issue:'12/1号', period:'12月1日(火)〜7日(月)', items:[
+      { type:'手巻き', submitDate:'2026-11-24', finalDate:'2026-11-27', stores:'仙台・五所・青森・弘前・清田・中の島' },
+      { type:'折り込み', submitDate:'2026-11-16', finalDate:'2026-11-22', stores:'屯田・琴似・花巻・福島' },
+    ]},
+    { issue:'12/1号(福住ポスティング)', period:'12月1日(火)〜7日(月) ※締切未定', items:[
+      { type:'折り込み', submitDate:'', finalDate:'', stores:'福住' },
+    ]},
+    { issue:'12/8号', period:'12月8日(火)〜14日(月)', items:[
+      { type:'手巻き', submitDate:'2026-12-01', finalDate:'2026-12-04', stores:'全店舗' },
+    ]},
+    { issue:'12/15号', period:'12月15日(火)〜21日(月)', items:[
+      { type:'手巻き', submitDate:'2026-12-08', finalDate:'2026-12-11', stores:'全店舗' },
+    ]},
+    { issue:'12/22号(クリスマス号)', period:'12月22日(火)〜25日(金) 4日間', items:[
+      { type:'折り込み', submitDate:'2026-11-18', finalDate:'2026-12-06', stores:'全店舗' },
+    ]},
+    { issue:'12/26号(歳末第一弾)', period:'12月26日(土)〜28日(月) 3日間', items:[
+      { type:'折り込み', submitDate:'2026-11-25', finalDate:'2026-12-11', stores:'全店舗' },
+    ]},
+    { issue:'12/29号(歳末第二弾)', period:'12月29日(火)〜31日(木) 3日間', items:[
+      { type:'折り込み', submitDate:'2026-11-25', finalDate:'2026-12-11', stores:'全店舗' },
+    ]},
+    { issue:'1/1号(年始)', period:'1月1日(火)〜5日(火) 5日間', items:[
+      { type:'折り込み', submitDate:'2026-12-01', finalDate:'2026-12-13', stores:'五所・屯田・青森・弘前・花巻' },
+    ]},
+    { issue:'1/2号(年始)', period:'1月1日(火)〜5日(火) 5日間', items:[
+      { type:'折り込み', submitDate:'2026-12-01', finalDate:'2026-12-13', stores:'福住・琴似' },
+    ]},
+    { issue:'1/5号(年始)', period:'1月5日(火)〜11日(月) 7日間', items:[
+      { type:'折り込み', submitDate:'2026-12-01', finalDate:'2026-12-13', stores:'仙台・清田・中の島・福島' },
+    ]},
+    { issue:'1/6号(年始)', period:'1月6日(水)〜11日(月) 6日間', items:[
+      { type:'手巻き', submitDate:'2026-12-08', finalDate:'2026-12-25', stores:'五所・屯田・青森・福住・弘前・琴似・花巻' },
     ]},
   ];
 }
